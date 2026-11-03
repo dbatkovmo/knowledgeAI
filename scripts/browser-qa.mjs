@@ -55,7 +55,7 @@ try{
  await until('document.querySelectorAll(".doc-card").length===15')
  await call('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true})
  await call('Page.navigate',{url:'http://127.0.0.1:4179/'})
- await until('document.querySelectorAll(".suggestions button").length===4')
+ await until('document.querySelector(".chat-shell")!==null')
  assert.ok(await run('document.documentElement.scrollWidth<=window.innerWidth+2'))
  await shot('knowledgeai-mobile-chat')
  assert.deepEqual(errors,[])

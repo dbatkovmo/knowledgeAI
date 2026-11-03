@@ -1,0 +1,7 @@
+dist/
+node_modules/
+artifacts/
+.env
+.env.*
+.idea/
+.DS_Store

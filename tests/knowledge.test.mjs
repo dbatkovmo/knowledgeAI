@@ -14,7 +14,7 @@ test('нормализация русских слов и поиск по рег
  const words=tokenize('Как оформить отпуск и отпуска?')
  assert.ok(words.includes('отпуск'))
  assert.ok(rankDocuments('как оформить отпуск',demoDocuments()).some(r=>r.doc.id==='vacation'))
- assert.equal(searchDocuments('выписать счёт',demoDocuments()).some(d=>d.id==='invoice'),false)
+ assert.ok(searchDocuments('выставить счёт',demoDocuments()).some(d=>d.id==='invoice'))
  assert.ok(searchDocuments('доставка',demoDocuments(),'Доставка').length>=1)
 })
 test('ответы содержат проверяемые источники и факты из базы',()=>{
